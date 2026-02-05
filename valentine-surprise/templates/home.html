@@ -4,15 +4,35 @@
     <title>Home</title>
     <style>
         body {
+            background: #fff0f5;
             text-align: center;
             font-family: Arial;
-            background: #fff0f5;
         }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        .by-selmon {
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #e6005c;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
         img {
             width: 220px;
             margin: 10px;
             border-radius: 15px;
         }
+
         a {
             display: inline-block;
             margin-top: 25px;
@@ -23,21 +43,34 @@
             font-size: 20px;
             border-radius: 10px;
         }
+
+        .watermark {
+            position: fixed;
+            bottom: 12px;
+            right: 15px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.4);
+            font-style: italic;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
 
 <h1>Find your perfect partner through</h1>
-<h2>💘 Selmon Ghar Jodo for this Valentine 💘</h2>
+<h2>💘 Selmon Ghar Jodo – This Valentine 💘</h2>
+
+<div class="by-selmon">Curated with 💖 by Selmon</div>
 
 <h3>Our Present Clients</h3>
 
-<img src="{{ url_for('static', filename='home_images/home1.jpg') }}">
-<img src="{{ url_for('static', filename='home_images/home2.jpg') }}">
+<img src="/static/home_images/home1.jpg">
+<img src="/static/home_images/home2.jpg">
 
 <br>
-<a href="/surprise">Click here for your perfect partner</a>
+<a href="/surprise">Click here for your partner</a>
+
+<div class="watermark">By Selmon 💖</div>
 
 </body>
 </html>
-
