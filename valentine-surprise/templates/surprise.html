@@ -68,38 +68,4 @@
 <br>
 <button id="showBtn" onclick="showFinal()">Show Now 💖</button>
 
-<audio id="music">
-    <source src="/static/music/love.mp3" type="audio/mp3">
-</audio>
-
-<div class="watermark">By Selmon 💖</div>
-
-<script>
-    let images = [
-        "s1.jpg","s2.jpg","s3.jpg","s4.jpg","s5.jpg",
-        "s6.jpg","s7.jpg","s8.jpg","s9.jpg","s10.jpg",
-        "s11.jpg","s12.jpg","s13.jpg","s14.jpg","s15.jpg"
-    ];
-
-    let index = 0;
-    let img = document.getElementById("photo");
-    let btn = document.getElementById("showBtn");
-
-    let shuffle = setInterval(() => {
-        img.src = "/static/shuffle_images/" + images[index];
-        index++;
-
-        if (index === images.length) {
-            clearInterval(shuffle);
-            btn.style.display = "inline-block";
-        }
-    }, 200);
-
-    function showFinal() {
-        img.src = "/static/shuffle_images/final.gif";
-        document.getElementById("music").play();
-    }
-</script>
-
-</body>
-</html>
+<audio id="music" preload="
