@@ -4,15 +4,35 @@
     <title>Surprise</title>
     <style>
         body {
+            background: #ffe6eb;
             text-align: center;
             font-family: Arial;
-            background: #ffe6eb;
         }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        .by-selmon {
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #e6005c;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
         img {
             width: 260px;
             border-radius: 20px;
             box-shadow: 0 0 20px red;
         }
+
         button {
             margin-top: 20px;
             padding: 15px 30px;
@@ -24,11 +44,22 @@
             display: none;
             cursor: pointer;
         }
+
+        .watermark {
+            position: fixed;
+            bottom: 12px;
+            right: 15px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.4);
+            font-style: italic;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
 
 <h1>Finding your perfect partner... 💞</h1>
+<div class="by-selmon">Selmon Ghar Jodo 💖</div>
 
 <img id="photo" src="/static/shuffle_images/s1.jpg">
 
@@ -38,6 +69,8 @@
 <audio id="music">
     <source src="/static/music/love.mp3" type="audio/mp3">
 </audio>
+
+<div class="watermark">By Selmon 💖</div>
 
 <script>
 let images = [
@@ -57,7 +90,7 @@ let shuffle = setInterval(() => {
         clearInterval(shuffle);
         document.querySelector("button").style.display = "inline-block";
     }
-}, 200); // ~3 sec
+}, 200);
 
 function showFinal() {
     img.src = "/static/final/final.gif";
