@@ -67,4 +67,29 @@
 <script>
     let images = [
         "s1.jpg","s2.jpg","s3.jpg","s4.jpg","s5.jpg",
-        "s6.jpg","s7.j
+        "s6.jpg","s7.jpg","s8.jpg","s9.jpg","s10.jpg",
+        "s11.jpg","s12.jpg","s13.jpg","s14.jpg","s15.jpg"
+    ];
+
+    let img = document.getElementById("photo");
+    let index = 0;
+
+    // shuffle animation
+    let shuffle = setInterval(() => {
+        img.src = "/static/shuffle_images/" + images[index];
+        index++;
+
+        if (index === images.length) {
+            clearInterval(shuffle);
+        }
+    }, 180);
+
+    // FINAL GIF + MUSIC
+    function showFinal() {
+        img.src = "/static/shuffle_images/final.gif?v=" + new Date().getTime();
+        document.getElementById("music").play();
+    }
+</script>
+
+</body>
+</html>
