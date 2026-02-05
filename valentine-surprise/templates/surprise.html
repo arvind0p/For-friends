@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Surprise</title>
+    <meta charset="UTF-8">
+    <title>Surprise 💖</title>
+
     <style>
         body {
             background: #ffe6eb;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
@@ -15,7 +19,7 @@
         }
 
         .by-selmon {
-            margin-top: 8px;
+            margin-top: 6px;
             font-size: 18px;
             font-weight: bold;
             color: #e6005c;
@@ -29,14 +33,14 @@
         }
 
         img {
-            margin-top: 25px;
+            margin-top: 30px;
             width: 260px;
             border-radius: 20px;
-            box-shadow: 0 0 20px crimson;
+            box-shadow: 0 0 25px crimson;
         }
 
         button {
-            margin-top: 25px;
+            margin-top: 30px;
             padding: 15px 35px;
             font-size: 20px;
             background: red;
@@ -45,6 +49,10 @@
             border-radius: 12px;
             cursor: pointer;
             display: none;
+        }
+
+        button:hover {
+            background: #cc0000;
         }
 
         .watermark {
@@ -60,50 +68,55 @@
 </head>
 <body>
 
-<h1>Finding your perfect partner... 💕</h1>
-<div class="by-selmon">Selmon Ghar Jodo 💖</div>
+    <h1>Finding your perfect partner... 💕</h1>
+    <div class="by-selmon">Selmon Ghar Jodo 💖</div>
 
-<img id="photo" src="/static/shuffle_images/s1.jpg">
+    <!-- IMAGE -->
+    <img id="photo" src="/static/shuffle_images/s1.jpg" alt="shuffle">
 
-<br>
-<button id="showBtn">Show Now 💖</button>
+    <br>
 
-<audio id="music">
-    <source src="/static/music/love.mp3" type="audio/mp3">
-</audio>
+    <!-- BUTTON -->
+    <button id="showBtn">Show Now 💖</button>
 
-<div class="watermark">By Selmon 💖</div>
+    <!-- MUSIC -->
+    <audio id="music" preload="auto">
+        <source src="/static/music/love.mp3" type="audio/mp3">
+    </audio>
 
-<script>
-    let images = [
-        "s1.jpg","s2.jpg","s3.jpg","s4.jpg","s5.jpg",
-        "s6.jpg","s7.jpg","s8.jpg","s9.jpg","s10.jpg",
-        "s11.jpg","s12.jpg","s13.jpg","s14.jpg","s15.jpg"
-    ];
+    <!-- WATERMARK -->
+    <div class="watermark">By Selmon 💖</div>
 
-    let index = 0;
-    let img = document.getElementById("photo");
-    let btn = document.getElementById("showBtn");
-    let music = document.getElementById("music");
+    <script>
+        const images = [
+            "s1.jpg","s2.jpg","s3.jpg","s4.jpg","s5.jpg",
+            "s6.jpg","s7.jpg","s8.jpg","s9.jpg","s10.jpg",
+            "s11.jpg","s12.jpg","s13.jpg","s14.jpg","s15.jpg"
+        ];
 
-    // 🔄 Shuffle images
-    let shuffle = setInterval(() => {
-        img.src = "/static/shuffle_images/" + images[index];
-        index++;
+        let index = 0;
+        const img = document.getElementById("photo");
+        const btn = document.getElementById("showBtn");
+        const music = document.getElementById("music");
 
-        if (index === images.length) {
-            clearInterval(shuffle);
-            btn.style.display = "inline-block";
-        }
-    }, 200);
+        // IMAGE SHUFFLE
+        const shuffle = setInterval(() => {
+            img.src = "/static/shuffle_images/" + images[index];
+            index++;
 
-    // ❤️ BUTTON CLICK = GIF + MUSIC TOGETHER
-    btn.addEventListener("click", () => {
-        img.src = "/static/shuffle_images/final.gif?v=" + Date.now(); // cache fix
-        music.currentTime = 0;
-        music.play();
-    });
-</script>
+            if (index === images.length) {
+                clearInterval(shuffle);
+                btn.style.display = "inline-block";
+            }
+        }, 200);
+
+        // SHOW BUTTON CLICK
+        btn.addEventListener("click", () => {
+            img.src = "/static/shuffle_images/final.gif?v=" + Date.now(); // GIF FORCE LOAD
+            music.currentTime = 0;
+            music.play();
+        });
+    </script>
 
 </body>
 </html>
