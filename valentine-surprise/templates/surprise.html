@@ -1,79 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Surprise</title>
+
     <style>
-        body{
-            background:#ffe6eb;
-            text-align:center;
-            font-family:Arial;
+        body {
+            background: #ffe6eb;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
-        h1{margin-top:40px;}
-        img{
-            margin-top:25px;
-            width:260px;
-            border-radius:20px;
-            box-shadow:0 0 20px crimson;
+
+        h1 {
+            margin-top: 40px;
+            font-size: 34px;
         }
-        button{
-            margin-top:25px;
-            padding:15px 35px;
-            font-size:20px;
-            background:red;
-            color:white;
-            border:none;
-            border-radius:12px;
-            cursor:pointer;
-            display:none;
+
+        img {
+            margin-top: 30px;
+            width: 260px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px crimson;
         }
-        .watermark{
-            position:fixed;
-            bottom:12px;
-            right:15px;
-            opacity:0.6;
-            font-style:italic;
+
+        button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 12px;
+            right: 15px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.4);
+            font-style: italic;
         }
     </style>
 </head>
+
 <body>
 
 <h1>Finding your perfect partner... 💕</h1>
 
+<!-- IMAGE -->
 <img id="photo" src="/static/shuffle_images/s1.jpg">
 
 <br>
-<button id="showBtn" onclick="showFinal()">Show Now 💖</button>
 
-<audio id="music" src="/static/music/love.mp3"></audio>
+<!-- BUTTON -->
+<button onclick="showFinal()">Show Now 💖</button>
+
+<!-- MUSIC -->
+<audio id="music" preload="auto">
+    <source src="/static/music/love.mp3" type="audio/mp3">
+</audio>
 
 <div class="watermark">By Selmon 💖</div>
 
 <script>
-let images = [
-"s1.jpg","s2.jpg","s3.jpg","s4.jpg","s5.jpg",
-"s6.jpg","s7.jpg","s8.jpg","s9.jpg","s10.jpg",
-"s11.jpg","s12.jpg","s13.jpg","s14.jpg","s15.jpg"
-];
-
-let i = 0;
-let img = document.getElementById("photo");
-let btn = document.getElementById("showBtn");
-
-let shuffle = setInterval(()=>{
-    img.src = "/static/shuffle_images/" + images[i];
-    i++;
-
-    if(i === images.length){
-        clearInterval(shuffle);
-        btn.style.display="inline-block";
-    }
-},200);
-
-function showFinal(){
-    img.src = "/static/shuffle_images/final.gif";  // ✅ GIF
-    document.getElementById("music").play();       // ✅ MUSIC
-}
-</script>
-
-</body>
-</html>
+    let images = [
+        "s1.jpg","s2.jpg","s3.jpg","s4.jpg","s5.jpg",
+        "s6.jpg","s7.j
