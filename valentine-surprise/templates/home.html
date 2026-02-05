@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #fff0f5;
+        }
+        img {
+            width: 220px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: crimson;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Find your perfect partner through</h1>
+<h2>💘 Selmon Ghar Jodo for this Valentine 💘</h2>
+
+<h3>Our Present Clients</h3>
+
+<img src="{{ url_for('static', filename='home_images/home1.jpg') }}">
+<img src="{{ url_for('static', filename='home_images/home2.jpg') }}">
+
+<br>
+<a href="/surprise">Click here for your partner</a>
+
+</body>
+</html>
