@@ -1,47 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <title>Welcome 💖</title>
+
     <style>
         body {
-            background: #fff0f5;
+            background: #ffc0cb;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
             text-align: center;
-            font-family: Arial;
         }
 
         h1 {
-            margin-top: 40px;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
         .by-selmon {
-            margin-top: 8px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #e6005c;
-            animation: pulse 1.5s infinite;
+            animation: glow 1.5s infinite;
+            margin-bottom: 30px;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.15); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.7; }
+        @keyframes glow {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
+            100% { opacity: 0.6; transform: scale(1); }
         }
 
-        img {
-            width: 220px;
-            margin: 10px;
-            border-radius: 15px;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            background: crimson;
-            color: white;
-            text-decoration: none;
+        a button {
+            padding: 15px 40px;
             font-size: 20px;
-            border-radius: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        a button:hover {
+            background: #cc0000;
         }
 
         .watermark {
@@ -57,20 +67,20 @@
 </head>
 <body>
 
-<h1>Find your perfect partner through</h1>
-<h2>💘 Selmon Ghar Jodo – This Valentine 💘</h2>
+    <div>
+        <h1>💖 Welcome to Valentine Surprise 💖</h1>
+        <div class="subtitle">Something special is waiting...</div>
 
-<div class="by-selmon">Curated with 💖 by Selmon</div>
+        <div class="by-selmon">
+            A beautiful surprise by Selmon 💖
+        </div>
 
-<h3>Our Present Clients</h3>
+        <a href="/surprise">
+            <button>Enter 💝</button>
+        </a>
+    </div>
 
-<img src="/static/home_images/home1.jpg">
-<img src="/static/home_images/home2.jpg">
-
-<br>
-<a href="/surprise">Click here for your partner</a>
-
-<div class="watermark">By Selmon 💖</div>
+    <div class="watermark">By Selmon 💖</div>
 
 </body>
 </html>
